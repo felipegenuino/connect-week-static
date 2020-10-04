@@ -1,0 +1,396 @@
+
+@import url(/assets/css/base.css); 
+@import url(/assets/css/modals.css); 
+
+
+ /* 'PARTICLE ------------------------------------------ */
+    #tsparticles{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-Index: -1;
+        width: 100vw;
+        height: 100vh;
+    }
+ /* 'endPARTICLE ------------------------------------------ */
+
+
+
+
+
+
+/* HEADER */
+header{
+    padding-top: 50px;
+    padding-bottom: 20px;
+    position: fixed;
+    margin: 0px auto 0 auto;
+    width: 100%;
+    top: 0px;
+    z-index: 1;
+    transition: all 0.2s linear;
+}
+
+header.fixed{
+    background-color: rgb(43, 49, 52);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+ }
+
+    .brand{
+        min-width: 115px;
+    }
+    nav { 
+        width: 100%;
+    margin: 0 40px;
+    }
+    nav ul {
+        list-style: none;
+        display: grid;
+        grid-auto-flow: column;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        grid-template-columns: repeat(3,1fr);
+        border-bottom: 1px solid #636667;
+        list-style: none;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    nav ul li {
+        text-align: center; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+    }
+    nav ul li a { margin-right: 30px;  }
+
+    nav ul li:hover a { color: #fff  }
+
+    nav ul li a {     color: #fff;
+        background-color: rgba(52,57,59,0.8);
+        width: 100%; 
+        text-align: center;
+        padding: 10px 0;
+        border: 1px solid transparent;
+    }
+
+    nav ul li a.active {
+        border-color: #636667;
+        border-bottom-color: transparent;
+    }
+
+    .nav-solution{}
+    .nav-solution a{
+        color: #24DC86;
+        background: transparent;
+        border: 1px solid #24DC86;
+        border-radius: 0;
+        min-width: 180px;
+    }
+    .nav-solution a:hover,
+    .nav-solution a:focus,
+    .nav-solution a:active{
+        color: #24DC86;
+        background: rgba(255,255,255,0.1) !important;
+        border-color: hsl(152 72% 50% / 0.8);
+    }
+ 
+/* BODY */
+main { margin-top: 130px;  min-height: calc(100vh - 206px);}
+
+.header-page { 
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    color: #fff;  }
+  .header-page h2 {    font-size: 48px;  font-weight: 600;}
+  .header-page h3 {font-size: 24px;  font-weight: 300;  letter-spacing: 0.06rem;}
+
+
+
+
+  footer{ padding-bottom: 20px;}
+
+/* 'HERO ------------------------------------------ */
+.hero-section{ }
+.hero-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0px; 
+    color: #fff; 
+}
+.hero-content h2{
+    font-style: italic;
+    font-weight: 300;
+    font-size: 24px;
+    letter-spacing: 4px;
+    margin-top: 30px;
+}
+
+/* endHERO ------------------------------------------ */
+
+
+/* 'PALESTRANTES ------------------------------------------ */
+.palestrantes-section{}
+.palestrantes {  background-color: var(--bg-content);  overflow-x: auto;  }
+.palestrantes ul {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+     padding: 0;
+    margin: 0;
+  }
+  
+  .palestrantes ul  .cardPalestrante {
+    text-align: center;
+    overflow: hidden;
+    margin-right: 5px;
+  }
+  .palestrantes ul .cardTitle {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 400;
+    margin-top: 10px;
+  }
+  .palestrantes ul .cardImage {
+    width: 206px;
+    height: 275px;
+    background-color: transparent;
+    background-blend-mode: multiply;
+    background-size: cover;
+    transition: all 0.2s linear; 
+  }
+  .palestrantes ul .cardImage:hover{
+    background-color: #24dc86;
+  }
+/* 'endPALESTRANTES ------------------------------------------ */
+
+
+
+/* 'ABOUT ------------------------------------------ */
+
+.about-section{   min-height: calc(100vh);   display: flex;}
+.about-section .container { align-items: center; align-content: center; display: flex; }
+.about-section .container > .row {  align-items: center;  }
+.about-section__content{  display: flex;  flex-direction: column; color: #fff; }
+.about-section__content h2{font-size: 48px; font-weight: 700; }
+.about-section__footer{
+  text-align: center;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  flex-direction: column; 
+}
+.about-section__footer > span{display: flex; justify-content: center;}
+.about-section__image{  width: 100%;}
+
+/* 'endABOUT ------------------------------------------ */
+
+
+
+
+
+
+
+/* 'COMPARTILHE ------------------------------------------ */
+.share-section{}
+.share-section__content {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    align-items: center;
+    border-radius: 5px;
+    margin: 20px auto 50px auto;
+    padding: 20px;
+    width: 970px;
+    max-width: 100%;
+    padding-top: 60px;
+    min-height: 300px; 
+  }
+/* 'endCOMPARTILHE ------------------------------------------ */
+
+
+
+
+
+
+
+
+/* 'GRADE ------------------------------------------ */
+    .GradeContainer{
+      overflow-y: auto;
+      height: calc(100vh - 310px);
+    }
+
+    .GradeList{
+      margin: 0;
+      padding: 0 20px 0 0;
+      list-style: none;
+    }
+
+    .GradeItemContainer{
+      display: flex;
+      min-height: 140px;
+      margin-bottom: 20px;
+      border: 2px solid transparent;
+      transition: all 0.2s linear;
+      color: #fff;
+    }
+    .GradeItemContainer:hover,
+    .GradeItemContainer:focus-within{border: 2px solid #2dad71;}
+
+
+    .GradeItemDate {
+    background-color: #2dad71;
+    color: #fff;
+    width: 170px;
+    max-width: 170px;
+    min-width: 170px;}
+
+    .GradeItemDate > div {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+
+    .GradeItemDateNumber {  font-size: 24px; }
+    .GradeItemDatedia { font-size: 18px;  text-transform: uppercase; }
+    .GradeItemCard {
+      background-color: #34393b;
+      margin-left: 20px;
+      border: 1px solid #585858;
+      display: flex;
+      padding: 18px 24px;
+      width: 100%;}
+
+      .GradeItemCardData {
+        border: 1px solid #24dc86;
+        width: 100px;
+        min-width: 100px;
+        margin-right: 18px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        color: #24dc86;
+        text-transform: uppercase;
+      }
+      .GradeItemCardContent {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+      }
+      .GradeItemCardContentInfo {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+      }  
+
+      .GradeItemCardContentInfoTitle {
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        margin-top: 5px;}
+
+        .GradeItemCardContentInfoTitleStep {
+          font-weight: 600;
+          margin-right: 10px;
+        }
+        .GradeItemCardContentInfoTitleText {
+          font-weight: 400;
+        }
+
+
+        .GradeItemCardContentInfoSpeaker {  font-size: 16px;  }
+        .GradeItemCardContentInfoSpeakerName {   color: #24dc86;  margin-right: 30px;  position: relative; }
+        .GradeItemCardContentInfoSpeakerName::after {
+          content: "";
+          position: absolute;
+          height: 20px;
+          width: 1px;
+          background: #fff;
+          top: 2px;
+          right: -15px;
+        }
+
+        .GradeItemCardContentInfoSpeakerPosition {
+          font-weight: 300;
+          letter-spacing: 0.03rem;
+        }
+
+        .GradeItemCardContentCall {
+          width: 200px;
+          min-width: 200px;
+          justify-content: center;
+          display: flex;
+          align-items: center;
+          height: 100%;}
+ 
+
+          .GradeItemCardContentCallToAction {
+            background: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            text-transform: uppercase;
+            width: 165px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            height: 65px;
+            transition: all 0.2s linear;}
+
+            .GradeItemCardContentCallToAction:focus,
+            .GradeItemCardContentCallToAction:hover {
+          border: 1px solid #fff;
+          background-color: rgba(255, 255, 255, 0.2);
+          text-decoration: none;
+        }
+
+
+/* 'endGRADE ------------------------------------------ */
+
+
+.list-days{ justify-content: center; align-items: center;  display: flex;}
+.list-days ul{    margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  color: #fff;}
+.list-days ul li{line-height: auto}
+.list-days ul li.active{line-height: auto}
+.list-days ul li.active > div { background: #2DAD71; border-color: #2DAD71 }
+.list-days ul li > div{
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  height: 90px;
+  border: 1px solid;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+.list-days ul li:not(.active) > div:hover{ background-color: rgba(255,255,255,0.2)}
+.list-days ul li > div span{ font-size: 24px;}
+.list-days ul li > div small{ font-size: 16px;}
+
+
+
+
+
+/* FOOTER */
