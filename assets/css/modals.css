@@ -1,4 +1,7 @@
 
+.modal-md .modal-content {
+  padding: 30px;
+}
 
 .modal-title{
   margin-bottom: 0;
@@ -21,7 +24,8 @@
   .modal-header{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    border-bottom: none;
+    border-bottom: none; 
+    justify-content: center;
   }
 
   .modal-header .close {
@@ -87,3 +91,7 @@
       max-width: 970px;
     }
   }
+
+
+
+  

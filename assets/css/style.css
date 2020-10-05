@@ -69,9 +69,8 @@ header.fixed{
         justify-content: center;
     }
     nav ul li a { margin-right: 30px;  }
-
+    nav ul li:last-child a { margin-right: 0; }
     nav ul li:hover a { color: #fff  }
-
     nav ul li a {     color: #fff;
         background-color: rgba(52,57,59,0.8);
         width: 100%; 
@@ -118,7 +117,10 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
 
 
 
-  footer{ padding-bottom: 20px;}
+  footer{ 
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
   footer img { height: 32px;}
 
 /* 'HERO ------------------------------------------ */
@@ -380,26 +382,32 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
     max-width: 100%;
 }
 
-.assista-card{
-  min-height: 400px; 
-    display: flex;
-    flex-direction: column;
+.assista-card {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+  transition: all 0.2s linear;
+  border: 2px solid transparent;
 }
-
+.assista-card:hover {
+  border: 2px solid #2dad71;
+}
 .assista-card__content {
   padding-top: 10px;
   height: 100%;
   display: flex;
   flex-direction: column;
   flex: 1;
+  transition: all 0.2s linear;
+  padding: 10px;
 }
-.assista-card__content__header{ display: flex; min-height: 110px;}
+.assista-card__content__header{ display: flex;}
 .assista-card__content__header p{ font-size: 20px; color: #fff;}
 
 .assista-card__content__body{
- 
-
-    color: #24DC86;
+  color: #24DC86;
+  display: flex;  
 }
 
     .assista-card__content__body-day{
@@ -409,7 +417,8 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
       padding: 2px 6px;
       margin-right: 10px;
     }
-    .assista-card__content__body-name{}
+
+.assista-card__content__body-name{    text-transform: uppercase;}
 
 .assista-card__content__footer{}
 
@@ -468,7 +477,22 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
 
 
 
-.list-days{     justify-content: center;
+.carousel-indicators--list-days {
+  position: relative;
+  z-index: inherit;
+  padding: 0;
+  margin: 20px 0 40px 0;
+}
+
+.carousel-indicators--list-days li{
+  height: initial;
+  width: inherit;
+  background: transparent;
+  border: none;
+  text-indent: initial;
+}
+/* 
+.list-days{    justify-content: center;
   align-items: center;
   margin-bottom: 40px;
   display: flex;;}
@@ -477,11 +501,11 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
   padding: 0;
   list-style: none;
   display: flex;
-  color: #fff;}
+  color: #fff;} */
 .list-days ul li{line-height: auto}
 .list-days ul li.active{line-height: auto}
-.list-days ul li.active > div { background: #2DAD71; border-color: #2DAD71 }
-.list-days ul li > div{
+.carousel-indicators--list-days  li.active .list-days--item { background: #2DAD71; border-color: #2DAD71 }
+.list-days--item{
   display: flex;
   flex-direction: column;
   width: 140px;
@@ -490,12 +514,13 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
   align-items: center;
   justify-content: center;
   margin: 0 10px;
+  color: #fff;
   cursor: pointer;
   transition: all 0.2s linear;
 }
 .list-days ul li:not(.active) > div:hover{ background-color: rgba(255,255,255,0.2)}
-.list-days ul li > div span{ font-size: 24px;}
-.list-days ul li > div small{ font-size: 16px;}
+.list-days--item span{ font-size: 24px;}
+.list-days--item small{ font-size: 16px;}
 
 
 

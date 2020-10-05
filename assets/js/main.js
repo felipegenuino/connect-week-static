@@ -1,4 +1,24 @@
 
+$(document).ready(function () {
+    if (typeof Cookies.get('visited') === 'undefined') {
+        Cookies.set('visited', 0, { expires: 1 });
+    }
+    if (parseInt(Cookies.get('visited')) == 0) {
+        setTimeout(function () {
+            $('#modalRDLiveDaily').modal('show');
+        }, 500);
+    }
+});
+
+
+
+
+
+
+
+
+
+
 // SCROLL HEADER
 $(document).scroll(function () {
     var y = $(this).scrollTop();
@@ -14,13 +34,23 @@ $(document).scroll(function () {
 
 
 
-
 // SEND FORM
 $(window).on('load', function (e) {
     $('.bricks-form form').submit(function (e) {
         e.preventDefault();
         // Coding
-        $('#modalSolucoes').modal('hide')
+        $('#modalSolucoes').modal('hide');
+        $('#modalRDLiveDaily').modal('hide');
+
+        $(':input', '#modalRDLiveDaily')
+            .not(':button, :submit, :reset, :hidden')
+            .val('')
+            .removeAttr('checked')
+            .removeAttr('selected');
+
+        //seta cookie como lido
+        Cookies.set('visited', 1, { expires: 1 });
+
         return false;
     });
 })
