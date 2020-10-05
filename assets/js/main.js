@@ -14,11 +14,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
 // SCROLL HEADER
 $(document).scroll(function () {
     var y = $(this).scrollTop();
