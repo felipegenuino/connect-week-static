@@ -30,6 +30,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/modals.css">
+
 </head>
 
 <body>
@@ -39,7 +42,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <div class="d-flex justify-content-between align-items-center">
+                    <div class="header-content">
                         <div class="brand">
                             <a class="active" href="/" aria-current="page">
                                 <img src="/assets/img/logotipoAltoqi.svg" alt="">
@@ -86,10 +89,10 @@
                         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel"
                             data-interval="false">
                             <ol class="carousel-indicators carousel-indicators--list-days">
-                                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active">
+                                <li data-target="#carouselExampleCaptions" data-slide-to="0">
                                     <div class="list-days--item"><span>DIA 6</span><small>Terça</small></div>
                                 </li>
-                                <li data-target="#carouselExampleCaptions" data-slide-to="1">
+                                <li data-target="#carouselExampleCaptions" data-slide-to="1" class="active">
                                     <div class="list-days--item"><span>DIA 7</span><small>Quarta</small></div>
                                 </li>
                                 <li data-target="#carouselExampleCaptions" data-slide-to="2">
@@ -100,7 +103,7 @@
                                 </li>
                             </ol>
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
+                                <div class="carousel-item">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="assista-card">
@@ -119,9 +122,10 @@
                                                             GONÇALVES</span>
                                                     </div>
                                                     <div class="assista-card__content__footer">
-                                                        <a href="live.html" type="button"
-                                                            class="assista-card__btn disabled" disabled>
-                                                            Assistir ao
+                                                        <a data-toggle="modal" data-target="#modalVideosAnteriores"
+                                                            data-url="https://www.youtube.com/embed/-QNQiaaL5pY?start=247"
+                                                            data-title="Abertura: A trajetória da transformação digital no processo de elaboração de projetos e na construção das edificações"
+                                                            type="button" class="assista-card__btn"> Assistir ao
                                                             vivo</a>
                                                     </div>
                                                 </div>
@@ -172,7 +176,7 @@
                                         </div> <!-- //col-lg-4 -->
                                     </div> <!-- //row -->
                                 </div> <!-- // carousel-item-->
-                                <div class="carousel-item">
+                                <div class="carousel-item active">
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="assista-card disabled">
@@ -432,6 +436,33 @@
 
 
 
+    <!-- modalRDLiveDaily -->
+    <div class="modal fade" id="modalRDLiveDaily" tabindex="-1" aria-labelledby="modalRDLiveDailyLabel"
+        aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog  modal-md  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title modal-title--large" id="modalRDLiveDailyLabel">Para acessar a palestra,
+                        insira o seu e-mail no campo abaixo.</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="display: none;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div role="main" id="assistiu-palestra-alto-connect-week-08440b696eb945aa171a"></div>
+                    <script type="text/javascript"
+                        src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+                    <script
+                        type="text/javascript"> new RDStationForms('assistiu-palestra-alto-connect-week-08440b696eb945aa171a', 'UA-98371985-3').createForm();</script>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
     <!-- Modal -->
     <div class="modal fade" id="modalSolucoes" tabindex="-1" aria-labelledby="modalSolucoesLabel" aria-hidden="true">
         <div class="modal-dialog  modal-lg">
@@ -461,6 +492,33 @@
 
 
 
+    <!-- Modal -->
+    <div class="modal fade" id="modalVideosAnteriores" tabindex="-1" aria-labelledby="modalVideosAnterioresLabel"
+        aria-hidden="true">
+        <div class="modal-dialog  modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalVideosAnterioresLabel"> title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="div">
+                        <div class="videoWrapper">
+                            <iframe class="embed-responsive-item" src="" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -482,6 +540,9 @@
 
     <!-- then include jquery wrapper -->
     <script src="https://cdn.jsdelivr.net/npm/jquery-particles@1.16.1/dist/jquery.particles.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
 
     <script src="assets/js/main.js"></script>
 

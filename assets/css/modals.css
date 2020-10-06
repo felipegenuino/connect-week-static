@@ -1,25 +1,15 @@
 
-.modal-md .modal-content {
-  padding: 30px;
-}
-
-.modal-title{
-  margin-bottom: 0;
-  line-height: 1.2;
-  font-size: 24px;
-}
-.modal-title--large{ 
-  font-size: 34px;
-  text-align: center;
-  font-weight: 600;
-}
+.modal-md .modal-content { padding: 30px;}
+.modal-title{   margin-bottom: 0;   line-height: 1.2;   font-size: 24px; }
+.modal-title--large{    font-size: 34px;   text-align: center;   font-weight: 600; }
 
   .modal-content{
     background-color: #34393B;
     border: 1px solid #24DC86;
     color: #fff;
     border-radius: 0;
-    padding: 50px 65px;
+    padding: 0;
+    height: 97%;
   }
   .modal-header{
     border-top-left-radius: 0;
@@ -63,13 +53,9 @@
     margin-bottom: 2.5rem;
   }
 
-  .modal-body{ max-height: 60vh; overflow-y: auto; }
+  
   .modal-body h5{ font-size: 16px; font-weight: 700;}
 
-  .modal-lista-palestrantes {
-    max-height: 200px;
-    overflow-y: auto;
-}
 
   .modal-lista-palestrantes ul {
     list-style: none;
@@ -86,10 +72,17 @@
   .palestrante-mini-card-image{}
   .palestrante-mini-card-content{}
 
+
+  @media (min-width: 767px){
+    .modal-content{ padding: 20px;  height: initial;}
+  }
+
+
   @media (min-width: 992px){
-    .modal-lg, .modal-xl {
-      max-width: 970px;
-    }
+    .modal-lg, .modal-xl {  max-width: 970px;  }
+    .modal-content{ padding: 50px 65px; }
+    .modal-body{ max-height: 60vh; overflow-y: auto; }
+    .modal-lista-palestrantes { max-height: 200px; overflow-y: auto;}
   }
 
 

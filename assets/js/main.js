@@ -6,8 +6,31 @@ $(document).ready(function () {
     if (parseInt(Cookies.get('visited')) == 0) {
         setTimeout(function () {
             $('#modalRDLiveDaily').modal('show');
+            $(':input', '#modalRDLiveDaily')
+                .not(':button, :submit, :reset, :hidden')
+                .val('')
+                .removeAttr('checked')
+                .removeAttr('selected');
+            setTimeout(function () {
+                $('#modalRDLiveDaily .close').show();
+            }, 5500);
         }, 500);
     }
+});
+
+
+
+
+
+
+$('#modalVideosAnteriores').on('show.bs.modal', function (event) {
+    $(this).find('.modal-title').text($(event.relatedTarget).data('title'));
+    $(this).find('iframe').attr("src", $(event.relatedTarget).data('url'));
+});
+
+$('#modalVideosAnteriores').on('hidden.bs.modal', function (e) {
+    $(this).find('iframe').attr("src", "");
+    $(this).find('.modal-title').text('').data('title');
 });
 
 
@@ -31,6 +54,25 @@ $(document).scroll(function () {
 
 // SEND FORM
 $(window).on('load', function (e) {
+
+
+
+
+    $('#modalRDLiveDaily #rd-email_field-kfvz78f5').blur(function () {
+        if (!$(this).val()) {
+
+            $('#modalRDLiveDaily .rd-button').dblclick(function () {
+                $('#modalRDLiveDaily').modal('hide');
+            });
+
+        }
+    });
+
+
+
+
+
+
     $('.bricks-form form').submit(function (e) {
         e.preventDefault();
         // Coding

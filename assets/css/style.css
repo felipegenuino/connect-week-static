@@ -1,7 +1,4 @@
 
-@import url(/assets/css/base.css); 
-@import url(/assets/css/modals.css); 
-
 
  /* 'PARTICLE ------------------------------------------ */
     #tsparticles{
@@ -16,34 +13,40 @@
  /* 'endPARTICLE ------------------------------------------ */
 
 
-
-
-
+ 
 
 /* HEADER */
 header{
     padding-top: 50px;
     padding-bottom: 20px;
-    position: fixed;
+    position: relative;
     margin: 0px auto 0 auto;
     width: 100%;
     top: 0px;
     z-index: 1;
     transition: all 0.2s linear;
 }
+ 
 
 header.fixed{
     background-color: rgb(43, 49, 52);
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
  }
 
+
+
+ .header-content{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+  }
+
+
     .brand{
         min-width: 115px;
     }
-    nav { 
-        width: 100%;
-    margin: 0 40px;
-    }
+    nav { width: 100%; margin: 20px 40px; }
     nav ul {
         list-style: none;
         display: grid;
@@ -68,7 +71,7 @@ header.fixed{
         align-items: center; 
         justify-content: center;
     }
-    nav ul li a { margin-right: 30px;  }
+    
     nav ul li:last-child a { margin-right: 0; }
     nav ul li:hover a { color: #fff  }
     nav ul li a {     color: #fff;
@@ -76,7 +79,8 @@ header.fixed{
         width: 100%; 
         text-align: center;
         padding: 10px 0;
-        border: 1px solid transparent;
+        border: 1px solid transparent; 
+        margin-right: 3px;
     }
 
     nav ul li a.active {
@@ -100,8 +104,30 @@ header.fixed{
         border-color: hsl(152 72% 50% / 0.8);
     }
  
+
+   
+
+@media (min-width: 992px){
+  header { position: fixed; }
+  .header-content{flex-direction: row;}
+  header nav { margin: 0 40px; }
+  nav ul li a { margin-right: 30px;  }
+}
+
+
+
+
+
+
+
+ 
 /* BODY */
-main { margin-top: 130px;  min-height: calc(100vh - 206px);}
+main { margin-top: 0;  min-height: calc(100vh - 206px);}
+
+@media (min-width: 992px){
+  main{ margin-top: 130px; }
+}
+
 
 .header-page { 
     text-align: center;
@@ -111,9 +137,15 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
     display: flex;
     flex-direction: column;
     color: #fff;  }
-  .header-page h2 {    font-size: 48px;  font-weight: 600;}
-  .header-page h3 {font-size: 24px;  font-weight: 300;  letter-spacing: 0.06rem;}
+  .header-page h2 { font-size: 32px;  font-weight: 600;}
+  .header-page h3 {font-size: 18px;  font-weight: 300;  letter-spacing: 0.06rem;}
 
+
+
+  @media (min-width: 992px){
+    .header-page h2 { font-size: 48px; }
+    .header-page h3 {font-size: 24px; }
+  }
 
 
 
@@ -133,6 +165,8 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
     padding: 50px 0px; 
     color: #fff; 
 }
+
+.hero-content img{ max-width: 100%; }
 .hero-content h2{
     font-style: italic;
     font-weight: 300;
@@ -147,6 +181,7 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
 /* 'PALESTRANTES ------------------------------------------ */
 .palestrantes-section{}
 .palestrantes {  background-color: var(--bg-content);  overflow-x: auto;  }
+
 .palestrantes ul {
     list-style: none;
     display: grid;
@@ -177,6 +212,21 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
   .palestrantes ul .cardImage:hover{
     background-color: #24dc86;
   }
+
+
+
+  @media (min-width: 992px){
+    .palestrantes--block{ overflow-x: initial;  }
+    .palestrantes.palestrantes--block ul {
+      display: flex;
+      flex-wrap: wrap; 
+      align-items: center; 
+      justify-content: center;
+    }
+    .palestrantes--block ul .cardPalestrante {margin-bottom: 15px;}
+  }
+
+
 /* 'endPALESTRANTES ------------------------------------------ */
 
 
@@ -232,137 +282,54 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
 
 
 /* 'GRADE ------------------------------------------ */
-    .GradeContainer{
-      overflow-y: auto;
-      height: calc(100vh - 360px);
-      margin-top: 20px;
-    }
-
-    .GradeList{
-      margin: 0;
-      padding: 0 20px 0 0;
-      list-style: none;
-    }
-
-    .GradeItemContainer{
-      display: flex;
-      min-height: 140px;
-      margin-bottom: 20px;
-      border: 2px solid transparent;
-      transition: all 0.2s linear;
-      color: #fff;
-    }
+    .GradeContainer{  overflow-y: auto;  margin-top: 20px;  } 
+    .GradeList{ margin: 0; padding: 0 0 0 0; list-style: none; }
+    .GradeItemContainer{ display: flex; min-height: 140px; margin-bottom: 20px; border: 2px solid transparent; transition: all 0.2s linear; color: #fff; flex-direction: column; }
     .GradeItemContainer:hover,
     .GradeItemContainer:focus-within{border: 2px solid #2dad71;}
-
-
-    .GradeItemDate {
-    background-color: #2dad71;
-    color: #fff;
-    width: 170px;
-    max-width: 170px;
-    min-width: 170px;}
-
-    .GradeItemDate > div {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; }
-
+    .GradeItemDate {background-color: #2dad71; color: #fff;  width: 100%;}
+    .GradeItemDate > div {  display: flex;  height: 100%;  justify-content: center;  align-items: center; flex-direction: column; }
     .GradeItemDateNumber {  font-size: 24px; }
     .GradeItemDatedia { font-size: 18px;  text-transform: uppercase; }
-    .GradeItemCard {
-      background-color: #34393b;
-      margin-left: 20px;
-      border: 1px solid #585858;
-      display: flex;
-      padding: 18px 24px;
-      width: 100%;}
+    .GradeItemCard { background-color: #34393b;  border: 1px solid #585858; display: flex;   padding: 18px 24px; width: 100%;  flex-direction: column; }
+    .GradeItemCardData { border: 1px solid #24dc86;  width: 100px; min-width: 100px;   justify-content: center; display: flex;  align-items: center; font-size: 24px;  color: #24dc86; text-transform: uppercase; margin: 0 auto;  }
+    .GradeItemCardContent {  display: flex; justify-content: flex-start;  width: 100%;  flex-direction: column;  }
+    .GradeItemCardContentInfo { display: flex;  flex-direction: column;  width: 100%;  justify-content: center;  }  
+    .GradeItemCardContentInfoTitle { font-size: 20px; font-weight: 400; margin-bottom: 10px; margin-top: 5px;}
+    .GradeItemCardContentInfoTitleStep { font-weight: 600; margin-right: 10px; }
+    .GradeItemCardContentInfoTitleText { font-weight: 400; }
+   
+    .GradeItemCardContentInfoSpeaker { font-size: 16px; display: flex;  flex-direction: column;   margin-bottom: 15px;  }
+    .GradeItemCardContentInfoSpeakerName {   color: #24dc86;  margin-right: 30px;  position: relative; }
+    
+    .GradeItemCardContentInfoSpeakerPosition { font-weight: 300; letter-spacing: 0.03rem; }
+    .GradeItemCardContentCall { width: 100%; justify-content: center; display: flex; align-items: center; height: 100%; }
+    .GradeItemCardContentCallToAction {  background: transparent;   border: 1px solid #fff; color: #fff; text-transform: uppercase;   width: 100%; align-items: center;  display: flex; justify-content: center; height: 65px; transition: all 0.2s linear; }
 
-      .GradeItemCardData {
-        border: 1px solid #24dc86;
-        width: 100px;
-        min-width: 100px;
-        margin-right: 18px;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        font-size: 24px;
-        color: #24dc86;
-        text-transform: uppercase;
-      }
-      .GradeItemCardContent {
-        display: flex;
-        justify-content: flex-start;
-        width: 100%;
-      }
-      .GradeItemCardContentInfo {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
-      }  
-
-      .GradeItemCardContentInfoTitle {
-        font-size: 24px;
-        font-weight: 400;
-        margin-bottom: 10px;
-        margin-top: 5px;}
-
-        .GradeItemCardContentInfoTitleStep {
-          font-weight: 600;
-          margin-right: 10px;
-        }
-        .GradeItemCardContentInfoTitleText {
-          font-weight: 400;
-        }
+    .GradeItemCardContentCallToAction:focus,
+    .GradeItemCardContentCallToAction:hover {  border: 1px solid #fff;  background-color: rgba(255, 255, 255, 0.2);  text-decoration: none;    }
 
 
-        .GradeItemCardContentInfoSpeaker {  font-size: 16px;  }
-        .GradeItemCardContentInfoSpeakerName {   color: #24dc86;  margin-right: 30px;  position: relative; }
-        .GradeItemCardContentInfoSpeakerName::after {
-          content: "";
-          position: absolute;
-          height: 20px;
-          width: 1px;
-          background: #fff;
-          top: 2px;
-          right: -15px;
-        }
 
-        .GradeItemCardContentInfoSpeakerPosition {
-          font-weight: 300;
-          letter-spacing: 0.03rem;
-        }
 
-        .GradeItemCardContentCall {
-          width: 200px;
-          min-width: 200px;
-          justify-content: center;
-          display: flex;
-          align-items: center;
-          height: 100%;}
- 
 
-          .GradeItemCardContentCallToAction {
-            background: transparent;
-            border: 1px solid #fff;
-            color: #fff;
-            text-transform: uppercase;
-            width: 165px;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            height: 65px;
-            transition: all 0.2s linear;}
 
-            .GradeItemCardContentCallToAction:focus,
-            .GradeItemCardContentCallToAction:hover {
-          border: 1px solid #fff;
-          background-color: rgba(255, 255, 255, 0.2);
-          text-decoration: none;
-        }
+
+@media (min-width: 1024px){
+  .GradeContainer{ height: calc(100vh - 360px); }
+  .GradeList{ padding: 0 20px 0 0; }
+  .GradeItemContainer{ flex-direction: row;}
+  .GradeItemDate { width: 170px; max-width: 170px; min-width: 170px;}
+  .GradeItemCard {flex-direction: row;  margin-left: 20px; }
+  .GradeItemCardData { margin: 0 18px 0 0;}
+  .GradeItemCardContent {flex-direction: row;}
+  .GradeItemCardContentInfoTitle {font-size: 24px;}
+  .GradeItemCardContentCall {width: 200px;  min-width: 200px;}
+  .GradeItemCardContentCallToAction {width: 165px; }
+  .GradeItemCardContentInfoSpeaker {  display: inline-block;  flex-direction: row; margin-bottom: 0px;  }
+  .GradeItemCardContentInfoSpeakerName::after {  content: "";  position: absolute; height: 20px;  width: 1px;  background: #fff;  top: 2px; right: -15px;    }
+}
+
 
 
 /* 'endGRADE ------------------------------------------ */
@@ -388,7 +355,7 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
   flex-direction: column;
   margin-bottom: 60px;
   transition: all 0.2s linear;
-  border: 2px solid transparent;
+  border: 2px solid #2dad71;
 }
 .assista-card:hover {
   border: 2px solid #2dad71;
@@ -422,7 +389,7 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
 
 .assista-card__content__footer{}
 
-.assista-card__btn:not(:disabled) {
+.assista-card__btn:not(.disabled) {
   min-width: 180px;
   border: 1px solid #fff;
   color: #fff;
@@ -436,6 +403,9 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
   text-align: center;
   text-transform: uppercase;
 }
+
+ 
+
 
 .assista-card__btn:hover,
 .assista-card__btn:focus {
@@ -456,11 +426,23 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
   cursor: no-drop;
 }
 
-.assista-card.disabled .assista-card__btn{ 
-  cursor: no-drop;
-  border-color: #737373;
+.assista-card__btn.disabled{ 
+  cursor: no-drop; 
+  min-width: 180px;
+  border: 1px solid #737373;
   color: #737373;
+  border-radius: 0;
+  margin-top: auto;
+  font-size: 16px;
+  /* display: flex; */
+  padding: 10px 20px;
+  margin-top: 20px;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
 }
+
+
 
 .assista-card.disabled .assista-card__btn:focus,
 .assista-card.disabled .assista-card__btn:hover  {
@@ -477,31 +459,9 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
 
 
 
-.carousel-indicators--list-days {
-  position: relative;
-  z-index: inherit;
-  padding: 0;
-  margin: 20px 0 40px 0;
-}
-
-.carousel-indicators--list-days li{
-  height: initial;
-  width: inherit;
-  background: transparent;
-  border: none;
-  text-indent: initial;
-}
-/* 
-.list-days{    justify-content: center;
-  align-items: center;
-  margin-bottom: 40px;
-  display: flex;;}
-
-.list-days ul{    margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  color: #fff;} */
+.carousel-indicators--list-days {  position: relative;  z-index: inherit;  padding: 0;  margin: 20px 0 40px 0;   display: flex;  flex-wrap: wrap;}
+.carousel-indicators--list-days li{  height: initial;  width: inherit;  background: transparent;  border: none;  text-indent: initial;}
+ 
 .list-days ul li{line-height: auto}
 .list-days ul li.active{line-height: auto}
 .carousel-indicators--list-days  li.active .list-days--item { background: #2DAD71; border-color: #2DAD71 }
@@ -513,7 +473,7 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
   border: 1px solid;
   align-items: center;
   justify-content: center;
-  margin: 0 10px;
+  margin: 2px 0;
   color: #fff;
   cursor: pointer;
   transition: all 0.2s linear;
@@ -523,6 +483,11 @@ main { margin-top: 130px;  min-height: calc(100vh - 206px);}
 .list-days--item small{ font-size: 16px;}
 
 
+@media (min-width: 1024px){
+  .carousel-indicators--list-days {  flex-wrap: nowrap;}
+  .list-days--item{ margin: 0 10px;}
+  .assista-card {  border: 2px solid transparent;}
+}
 
 
 
